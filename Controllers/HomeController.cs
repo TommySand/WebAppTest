@@ -10,7 +10,9 @@ namespace WebAppTest.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            InventoryEntities entities = new InventoryEntities();
+
+            return View(from Model2 in  entities.Inventories.Take(10) select Model2);
         }
 
         public ActionResult About()
