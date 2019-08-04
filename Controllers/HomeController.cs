@@ -8,11 +8,17 @@ namespace WebAppTest.Controllers
 {
     public class HomeController : Controller
     {
+
+        InventoryEntities entities = new InventoryEntities();
         public ActionResult Index()
         {
-            InventoryEntities entities = new InventoryEntities();
+            var query = from i in entities.Inventories select i;
 
-            return View(from Model2 in  entities.Inventories.Take(10) select Model2);
+            var model = query.ToList();
+
+            return View(model);
+                        
+            
         }
 
         public ActionResult About()
