@@ -164,8 +164,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Medal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestSchema.cs">
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -186,6 +204,16 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <Content Include="Model3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Model2.edmx">
@@ -194,6 +222,13 @@
     </EntityDeploy>
     <Content Include="Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Model3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model3.edmx.diagram">
+      <DependentUpon>Model3.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
