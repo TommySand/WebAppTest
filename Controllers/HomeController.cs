@@ -33,5 +33,12 @@ namespace WebAppTest.Controllers
 
             return View();
         }
+        public ActionResult InventoryTest()
+        {
+            ViewBag.Message = "Inventory.";
+
+            return View();
     }
+
+}
 }
