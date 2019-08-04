@@ -1,31 +1,88 @@
-﻿@*@{
-        ViewBag.Title = "Home Page";
-    }
+﻿@model IEnumerable<WebAppTest.Models.Medal>
 
-    <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+@{       
+    ViewBag.Title = "Index";
+    Layout = null;
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
+    WebGrid webGrid = new WebGrid(source: Model);
+    webGrid.Pager(WebGridPagerModes.All);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Index</title>
+    <style type="text/css">
+        body {  
+            font-family: Arial;  
+            font-size: 10pt;  
+        }  
+  
+        .Grid {  
+            border: 1px solid #ccc;  
+            border-collapse: collapse;  
+        }  
+  
+            .Grid th {  
+                background-color: #F7F7F7;  
+                font-weight: bold;  
+            }  
+  
+            .Grid th, .Grid td {  
+                padding: 5px;  
+                border: 1px solid #ccc;  
+            }  
+  
+            .Grid, .Grid table td {  
+                border: 0px solid #ccc;  
+            }  
+  
+                .Grid th a, .Grid th a:visited {  
+                    color: #333;  
+                } 
+    </style>
+</head>
+
+<body>
+
+    <center>
+
+        <h1>Inventory</h1>
+
+        <p style="align-items:initial;">
+            @Html.ActionLink("Create New", "Create")
+        </p>
+
+        @webGrid.GetHtml(
+        htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+        columns: webGrid.Columns(
+            webGrid.Column("Inventory.ProductID", "Id"),
+            webGrid.Column("Inventory.Name", "Name"),
+            webGrid.Column("Inventory.Group", "Group"),
+            webGrid.Column("Inventory.Quantity", "Quantity"),
+            webGrid.Column("Inventory.Price", "Price"),
+            webGrid.Column("Inventory.Family", "Family"),
+            webGrid.Column("Inventory.Type", "Type"),
+
+            webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectedRow(this);" })</text>)
+        ))
+
+        <script type="text/javascript">
+            function GetSelectedRow(link) {
+                var row = link.parentNode.parentNode;
+                var message = "Selected Row:";
+                message += "\n\n Id: " + row.getElementsByTagName("TD")[0].innerHTML;
+                message += "\n\n Name: " + row.getElementsByTagName("TD")[1].innerHTML;
+                message += "\n\n Group: " + row.getElementsByTagName("TD")[2].innerHTML;
+                message += "\n\n Quantity: " + row.getElementsByTagName("TD")[3].innerHTML;
+                message += "\n\n Price: " + row.getElementsByTagName("TD")[4].innerHTML;
+                message += "\n\n Family: " + row.getElementsByTagName("TD")[5].innerHTML;
+                message += "\n\n Type: " + row.getElementsByTagName("TD")[6].innerHTML;
+                alert(message)
+                return false;
+            }
+        </script>
+    </center>
+</body>
+</html>
