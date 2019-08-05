@@ -45,6 +45,7 @@
 </head>
 
 <body>
+    <img src="~/Content/Images/D12A.01.jpg" alt="Error: Image not found">
     <section>
         <center>
 
@@ -62,7 +63,7 @@
                 webGrid.Column("Medal.MedalSize", "Size"),
 
                 webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectedRow(this);" })</text>)
-            ))
+))
 
             <script type="text/javascript">
                 function GetSelectedRow(link) {
@@ -98,8 +99,8 @@
                 webGrid.Column("Trophy.TrophyPartSize", "Size"),
                 webGrid.Column("Trophy.TrophyPartType", "Type"),
 
-                webGrid.Column(header: "Action", format:@<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectredRow(this);" })</text>)
-            ))
+                webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectredRow(this);" })</text>)
+))
 
             <script type="text/javascript">
                 function GetSelectedRow(link) {

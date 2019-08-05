@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebAppTest.Medal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalFamily)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalSize)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalFamily)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalSize)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MedalID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MedalID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MedalID })
+        </td>
+    </tr>
+}
+
+</table>
