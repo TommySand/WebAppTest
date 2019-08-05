@@ -146,8 +146,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Medal.cs">
+      <DependentUpon>MedalsAndTophy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedalsAndTophy.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedalsAndTophy.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedalsAndTophy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedalsAndTophy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MedalsAndTophy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MedalsAndTophy.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Medal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trophy.cs">
+      <DependentUpon>MedalsAndTophy.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -158,8 +179,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="MedalsAndTophy.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MedalsAndTophy.edmx</DependentUpon>
+      <LastGenOutput>MedalsAndTophy.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MedalsAndTophy.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MedalsAndTophy.edmx</DependentUpon>
+      <LastGenOutput>MedalsAndTophy.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="MedalsAndTophy.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MedalsAndTophy.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MedalsAndTophy.edmx.diagram">
+      <DependentUpon>MedalsAndTophy.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
