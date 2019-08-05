@@ -13,7 +13,10 @@ namespace WebAppTest.Controllers
         InventoryEntities entities = new InventoryEntities();
         public ActionResult Index()
         {
-            var query = from i in entities.Inventories select new Medal { Inventory = i };
+            var query = from m in entities.Medals
+                        join t in entities.Trophies on m.MedalID equals t.TrophyPartID
+
+                        select new MedalWithTrophy { Medal = m, Trophy = t };
 
             var model = query.ToList();
 

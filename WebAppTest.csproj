@@ -164,7 +164,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MedalsAndTophy.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Medal.cs" />
+    <Compile Include="Models\MedalWithTrophy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trophy.cs">
       <DependentUpon>MedalsAndTophy.tt</DependentUpon>

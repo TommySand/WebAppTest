@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebAppTest.Models.Medal>
+﻿@model IEnumerable<WebAppTest.Models.MedalWithTrophy>
 
 @{       
     ViewBag.Title = "Index";
@@ -45,44 +45,78 @@
 </head>
 
 <body>
+    <section>
+        <center>
 
-    <center>
+            <h1>Medals</h1>
 
-        <h1>Inventory</h1>
+            @webGrid.GetHtml(
+            htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+            columns: webGrid.Columns(
+                webGrid.Column("Medal.MedalID", "Id"),
+                webGrid.Column("Medal.MedalName", "Name"),
+                webGrid.Column("Medal.MedalGroup", "Group"),
+                webGrid.Column("Medal.MedalQuantity", "Quantity"),
+                webGrid.Column("Medal.MedalPrice", "Price"),
+                webGrid.Column("Medal.MedalFamily", "Family"),
+                webGrid.Column("Medal.MedalSize", "Size"),
 
-        <p style="align-items:initial;">
-            @Html.ActionLink("Create New", "Create")
-        </p>
+                webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectedRow(this);" })</text>)
+            ))
 
-        @webGrid.GetHtml(
-        htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
-        columns: webGrid.Columns(
-            webGrid.Column("Inventory.ProductID", "Id"),
-            webGrid.Column("Inventory.ProductName", "Name"),
-            webGrid.Column("Inventory.ProductGroup", "Group"),
-            webGrid.Column("Inventory.ProductQuantity", "Quantity"),
-            webGrid.Column("Inventory.ProductPrice", "Price"),
-            webGrid.Column("Inventory.ProductFamily", "Family"),
-            webGrid.Column("Inventory.ProductType", "Type"),
+            <script type="text/javascript">
+                function GetSelectedRow(link) {
+                    var row = link.parentNode.parentNode;
+                    var message = "Selected Row:";
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[0].innerHTML;
+                    message += "\n\n Name: " + row.getElementsByTagName("TD")[1].innerHTML;
+                    message += "\n\n Group: " + row.getElementsByTagName("TD")[2].innerHTML;
+                    message += "\n\n Quantity: " + row.getElementsByTagName("TD")[3].innerHTML;
+                    message += "\n\n Price: " + row.getElementsByTagName("TD")[4].innerHTML;
+                    message += "\n\n Family: " + row.getElementsByTagName("TD")[5].innerHTML;
+                    message += "\n\n Type: " + row.getElementsByTagName("TD")[6].innerHTML;
+                    alert(message)
+                    return false;
+                }
+            </script>
+        </center>
+    </section>
 
-            webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectedRow(this);" })</text>)
-        ))
+    <section>
+        <center>
 
-        <script type="text/javascript">
-            function GetSelectedRow(link) {
-                var row = link.parentNode.parentNode;
-                var message = "Selected Row:";
-                message += "\n\n Id: " + row.getElementsByTagName("TD")[0].innerHTML;
-                message += "\n\n Name: " + row.getElementsByTagName("TD")[1].innerHTML;
-                message += "\n\n Group: " + row.getElementsByTagName("TD")[2].innerHTML;
-                message += "\n\n Quantity: " + row.getElementsByTagName("TD")[3].innerHTML;
-                message += "\n\n Price: " + row.getElementsByTagName("TD")[4].innerHTML;
-                message += "\n\n Family: " + row.getElementsByTagName("TD")[5].innerHTML;
-                message += "\n\n Type: " + row.getElementsByTagName("TD")[6].innerHTML;
-                alert(message)
-                return false;
-            }
-        </script>
-    </center>
+            <h1>Trophyparts</h1>
+
+            @webGrid.GetHtml(
+            htmlAttributes: new { @id = "webGrid", @class = "Grid" },
+            columns: webGrid.Columns(
+                webGrid.Column("Trophy.TrophyPartID", "Id"),
+                webGrid.Column("Trophy.TrophyPartName", "Name"),
+                webGrid.Column("Trophy.TrophyPartGroup", "Group"),
+                webGrid.Column("Trophy.TrophyPartQuantity", "Quantity"),
+                webGrid.Column("Trophy.TrophyPartPrice", "Price"),
+                webGrid.Column("Trophy.TrophyPartSize", "Size"),
+                webGrid.Column("Trophy.TrophyPartType", "Type"),
+
+                webGrid.Column(header: "Action", format:@<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectredRow(this);" })</text>)
+            ))
+
+            <script type="text/javascript">
+                function GetSelectedRow(link) {
+                    var row = link.parentNode.parentNode;
+                    var message = "Selected Row";
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[0].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[1].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[2].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[3].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[4].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[5].innerHtML;
+                    message += "\n\n Id: " + row.getElementsByTagName("TD")[6].innerHtML;
+                    alert(message)
+                    return false;
+                }
+            </script>
+        </center>
+    </section>
 </body>
 </html>
