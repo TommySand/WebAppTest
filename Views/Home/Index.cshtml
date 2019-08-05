@@ -58,12 +58,12 @@
         htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
         columns: webGrid.Columns(
             webGrid.Column("Inventory.ProductID", "Id"),
-            webGrid.Column("Inventory.Name", "Name"),
-            webGrid.Column("Inventory.Group", "Group"),
-            webGrid.Column("Inventory.Quantity", "Quantity"),
-            webGrid.Column("Inventory.Price", "Price"),
-            webGrid.Column("Inventory.Family", "Family"),
-            webGrid.Column("Inventory.Type", "Type"),
+            webGrid.Column("Inventory.ProductName", "Name"),
+            webGrid.Column("Inventory.ProductGroup", "Group"),
+            webGrid.Column("Inventory.ProductQuantity", "Quantity"),
+            webGrid.Column("Inventory.ProductPrice", "Price"),
+            webGrid.Column("Inventory.ProductFamily", "Family"),
+            webGrid.Column("Inventory.ProductType", "Type"),
 
             webGrid.Column(header: "Action", format: @<text>@Html.ActionLink("Select", null, null, new { @onClick = "return GetSelectedRow(this);" })</text>)
         ))
