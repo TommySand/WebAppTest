@@ -11,16 +11,25 @@ namespace WebAppTest
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Medal
     {
         public int MedalID { get; set; }
+        [StringLength(100)]
         public string MedalName { get; set; }
+        [StringLength(10)]
         public string MedalGroup { get; set; }
+        [Range(0, 100000)]
         public Nullable<int> MedalQuantity { get; set; }
+        [Range(0, 10000)]
         public Nullable<double> MedalPrice { get; set; }
+        [StringLength(10)]
         public string MedalType { get; set; }
+        [StringLength(10)]
         public string MedalSize { get; set; }
+        [StringLength(10)]
         public string MedalFamily { get; set; }
+
     }
 }

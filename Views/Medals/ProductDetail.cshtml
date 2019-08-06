@@ -1,0 +1,75 @@
+﻿@model WebAppTest.Medal
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>Medal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedalFamily)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedalFamily)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.MedalID }) |
+    @Html.ActionLink("Back to List", "Index")*@
+</p>

@@ -242,6 +242,7 @@
     <Content Include="Views\Trophies\Edit.cshtml" />
     <Content Include="Views\Trophies\Index.cshtml" />
     <Content Include="Views\Medals\Catalogue.cshtml" />
+    <Content Include="Views\Medals\ProductDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
