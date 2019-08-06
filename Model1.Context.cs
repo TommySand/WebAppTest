@@ -13,10 +13,10 @@ namespace WebAppTest
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class masterEntities : DbContext
+    public partial class InventoryEntities : DbContext
     {
-        public masterEntities()
-            : base("name=masterEntities")
+        public InventoryEntities()
+            : base("name=InventoryEntities")
         {
         }
     
@@ -25,9 +25,7 @@ namespace WebAppTest
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<spt_fallback_db> spt_fallback_db { get; set; }
-        public virtual DbSet<spt_fallback_dev> spt_fallback_dev { get; set; }
-        public virtual DbSet<spt_fallback_usg> spt_fallback_usg { get; set; }
-        public virtual DbSet<spt_monitor> spt_monitor { get; set; }
+        public virtual DbSet<Medal> Medals { get; set; }
+        public virtual DbSet<Trophy> Trophies { get; set; }
     }
 }

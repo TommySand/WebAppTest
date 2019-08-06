@@ -19,7 +19,8 @@ namespace WebAppTest
         public string TrophyPartGroup { get; set; }
         public Nullable<int> TrophyPartQuantity { get; set; }
         public Nullable<double> TrophyPartPrice { get; set; }
-        public string TrophyPartSize { get; set; }
         public string TrophyPartType { get; set; }
+        public string TrophyPartSize { get; set; }
+        public string TrophyPartFamily { get; set; }
     }
 }

@@ -19,7 +19,8 @@ namespace WebAppTest
         public string MedalGroup { get; set; }
         public Nullable<int> MedalQuantity { get; set; }
         public Nullable<double> MedalPrice { get; set; }
-        public string MedalFamily { get; set; }
+        public string MedalType { get; set; }
         public string MedalSize { get; set; }
+        public string MedalFamily { get; set; }
     }
 }
