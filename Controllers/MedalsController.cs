@@ -41,6 +41,10 @@ namespace WebAppTest.Controllers
         {
             return View();
         }
+        public async Task <ActionResult> Catalogue()
+        {
+            return View(await db.Medals.ToListAsync());
+        }
 
         // POST: Medals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
