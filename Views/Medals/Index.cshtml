@@ -9,62 +9,75 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalGroup)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalQuantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalFamily)
-        </th>
-        <th></th>
-    </tr>
+    @{
+        ViewBag.Title = "Index";
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalGroup)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalQuantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalSize)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalFamily)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MedalID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MedalID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MedalID })
-        </td>
-    </tr>
+    @using (Html.BeginForm())
+    {
+    <p>
+        Name: @Html.TextBox("SearchString")
+        <input type="submit" value="Filter" />
+    </p>
 }
+    </p>
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedalFamily)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalGroup)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalQuantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MedalSize)
+                </td>
+                <td>
+                    @Html.ActionLink(item.MedalFamily, "/create/"+item.MedalFamily)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MedalID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MedalID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MedalID })
+                </td>
+            </tr>
+        }
+
+    </table>

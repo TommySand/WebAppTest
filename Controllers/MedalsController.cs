@@ -16,9 +16,17 @@ namespace WebAppTest.Controllers
         private InventoryEntities db = new InventoryEntities();
 
         // GET: Medals
-        public async Task<ActionResult> Index()
+        public ActionResult Index(string searchString)
         {
-            return View(await db.Medals.ToListAsync());
+            var movies = from m in db.Medals
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.MedalName.Contains(searchString));
+            }
+
+            return View(movies);
         }
 
         // GET: Medals/Details/5
@@ -127,6 +135,10 @@ namespace WebAppTest.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ProductDetail()
+        {
+            return View();
         }
     }
 }
