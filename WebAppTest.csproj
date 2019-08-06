@@ -166,6 +166,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MedalViewModel.cs" />
     <Compile Include="Models\MedalWithTrophy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trophy.cs">

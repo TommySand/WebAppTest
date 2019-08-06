@@ -8,6 +8,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebAppTest;
+using WebAppTest.Models;
+using System.IO;
 
 namespace WebAppTest.Controllers
 {
@@ -41,9 +43,12 @@ namespace WebAppTest.Controllers
         {
             return View();
         }
-        public async Task <ActionResult> Catalogue()
+        
+
+
+        public ActionResult Catalogue()
         {
-            return View(await db.Medals.ToListAsync());
+            return View();
         }
 
         // POST: Medals/Create

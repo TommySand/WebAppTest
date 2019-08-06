@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+#medalimage {
+    border-style: ridge;
+    border-width: 2px;
+    border-color: green;
+
+
+}
+
+

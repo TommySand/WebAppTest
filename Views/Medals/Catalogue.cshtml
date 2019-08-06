@@ -1,70 +1,18 @@
-﻿@model IEnumerable<WebAppTest.Medal>
+﻿@model IEnumerable<WebAppTest.Models.MedalViewModel>
 
 @{
     ViewBag.Title = "View";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/Site.css")
 }
 
-<h2>View</h2>
+<h1>Catalogue</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalGroup)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalQuantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalSize)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MedalFamily)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalGroup)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalQuantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalSize)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MedalFamily)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MedalID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MedalID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MedalID })
-        </td>
-    </tr>
+
+@foreach(var imgPath in Directory.GetFiles(Server.MapPath("~/Content/Images"), "*.jpg"))
+{
+     var img = new FileInfo(imgPath);
+     <img id="medalimage" src="@Url.Content(String.Format("~/Content/Images/{0}", img.Name))" class="image"/>
 }
 
-</table>
