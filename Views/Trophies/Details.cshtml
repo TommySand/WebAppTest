@@ -1,0 +1,75 @@
+﻿@model WebAppTest.Trophy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trophy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrophyPartFamily)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrophyPartFamily)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrophyPartID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

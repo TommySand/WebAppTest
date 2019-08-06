@@ -25,10 +25,13 @@
             @Html.DisplayNameFor(model => model.MedalPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MedalFamily)
+            @Html.DisplayNameFor(model => model.MedalType)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MedalSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedalFamily)
         </th>
         <th></th>
     </tr>
@@ -48,10 +51,13 @@
             @Html.DisplayFor(modelItem => item.MedalPrice)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MedalFamily)
+            @Html.DisplayFor(modelItem => item.MedalType)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.MedalSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedalFamily)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MedalID }) |

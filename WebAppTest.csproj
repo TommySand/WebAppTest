@@ -144,6 +144,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MedalsController.cs" />
+    <Compile Include="Controllers\TrophiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +235,11 @@
     <Content Include="Views\Medals\Details.cshtml" />
     <Content Include="Views\Medals\Edit.cshtml" />
     <Content Include="Views\Medals\Index.cshtml" />
+    <Content Include="Views\Trophies\Create.cshtml" />
+    <Content Include="Views\Trophies\Delete.cshtml" />
+    <Content Include="Views\Trophies\Details.cshtml" />
+    <Content Include="Views\Trophies\Edit.cshtml" />
+    <Content Include="Views\Trophies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

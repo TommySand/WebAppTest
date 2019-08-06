@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebAppTest.Trophy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartSize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrophyPartFamily)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartSize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrophyPartFamily)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrophyPartID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrophyPartID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrophyPartID })
+        </td>
+    </tr>
+}
+
+</table>

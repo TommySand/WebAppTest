@@ -11,107 +11,107 @@ using WebAppTest;
 
 namespace WebAppTest.Controllers
 {
-    public class MedalsController : Controller
+    public class TrophiesController : Controller
     {
         private InventoryEntities db = new InventoryEntities();
 
-        // GET: Medals
+        // GET: Trophies
         public async Task<ActionResult> Index()
         {
-            return View(await db.Medals.ToListAsync());
+            return View(await db.Trophies.ToListAsync());
         }
 
-        // GET: Medals/Details/5
+        // GET: Trophies/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medal medal = await db.Medals.FindAsync(id);
-            if (medal == null)
+            Trophy trophy = await db.Trophies.FindAsync(id);
+            if (trophy == null)
             {
                 return HttpNotFound();
             }
-            return View(medal);
+            return View(trophy);
         }
 
-        // GET: Medals/Create
+        // GET: Trophies/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Medals/Create
+        // POST: Trophies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "MedalID,MedalName,MedalGroup,MedalQuantity,MedalPrice,MedalType,MedalSize,MedalFamily")] Medal medal)
+        public async Task<ActionResult> Create([Bind(Include = "TrophyPartID,TrophyPartName,TrophyPartGroup,TrophyPartQuantity,TrophyPartPrice,TrophyPartType,TrophyPartSize,TrophyPartFamily")] Trophy trophy)
         {
             if (ModelState.IsValid)
             {
-                db.Medals.Add(medal);
+                db.Trophies.Add(trophy);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(medal);
+            return View(trophy);
         }
 
-        // GET: Medals/Edit/5
+        // GET: Trophies/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medal medal = await db.Medals.FindAsync(id);
-            if (medal == null)
+            Trophy trophy = await db.Trophies.FindAsync(id);
+            if (trophy == null)
             {
                 return HttpNotFound();
             }
-            return View(medal);
+            return View(trophy);
         }
 
-        // POST: Medals/Edit/5
+        // POST: Trophies/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "MedalID,MedalName,MedalGroup,MedalQuantity,MedalPrice,MedalType,MedalSize,MedalFamily")] Medal medal)
+        public async Task<ActionResult> Edit([Bind(Include = "TrophyPartID,TrophyPartName,TrophyPartGroup,TrophyPartQuantity,TrophyPartPrice,TrophyPartType,TrophyPartSize,TrophyPartFamily")] Trophy trophy)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(medal).State = EntityState.Modified;
+                db.Entry(trophy).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(medal);
+            return View(trophy);
         }
 
-        // GET: Medals/Delete/5
+        // GET: Trophies/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Medal medal = await db.Medals.FindAsync(id);
-            if (medal == null)
+            Trophy trophy = await db.Trophies.FindAsync(id);
+            if (trophy == null)
             {
                 return HttpNotFound();
             }
-            return View(medal);
+            return View(trophy);
         }
 
-        // POST: Medals/Delete/5
+        // POST: Trophies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Medal medal = await db.Medals.FindAsync(id);
-            db.Medals.Remove(medal);
+            Trophy trophy = await db.Trophies.FindAsync(id);
+            db.Trophies.Remove(trophy);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
