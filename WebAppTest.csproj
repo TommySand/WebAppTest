@@ -240,6 +240,7 @@
     <Content Include="Views\Trophies\Details.cshtml" />
     <Content Include="Views\Trophies\Edit.cshtml" />
     <Content Include="Views\Trophies\Index.cshtml" />
+    <Content Include="Views\Medals\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
