@@ -12,6 +12,8 @@ using WebAppTest.Models;
 using System.IO;
 using MahApps.Metro.Controls.Dialogs;
 using System.Windows.Forms;
+using System.Web.Mvc.Html;
+using System.Web.Routing;
 
 namespace WebAppTest.Controllers
 {
@@ -68,13 +70,6 @@ namespace WebAppTest.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "MedalID,MedalName,MedalGroup,MedalQuantity,MedalPrice,MedalType,MedalSize,MedalFamily")] Medal medal)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    db.Medals.Add(medal);
-            //    await db.SaveChangesAsync();
-            //    //MessageBox.Show("The medal was added to the database");
-            //    //return RedirectToAction("Index");
-            //}
             if (ModelState.IsValid)
             {
                 db.Medals.Add(medal);
@@ -88,9 +83,6 @@ namespace WebAppTest.Controllers
                 ViewData["Error"] = "Error message text.";
                 return View(medal);
             }
-       // }
-
-            //return View(medal);
         }
 
         // GET: Medals/Edit/5

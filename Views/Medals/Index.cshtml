@@ -20,8 +20,6 @@
         <input type="submit" value="Filter" />
     </p>
 }
-    </p>
-    </p>
     <table class="table">
         <tr>
             <th>
@@ -71,7 +69,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.MedalFamily)
-                    @*@Html.ActionResult(item.MedalFamily, "/search?" + item.MedalFamily)*@
+                    @Html.ActionLink("Show", item.MedalFamily, new { id = item.MedalFamily })
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.MedalID }) |
