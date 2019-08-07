@@ -17,6 +17,7 @@ namespace WebAppTest
     {
         public int MedalID { get; set; }
         [StringLength(100)]
+        [Required(ErrorMessage = "This field can not be empty.")]
         public string MedalName { get; set; }
         [StringLength(10)]
         public string MedalGroup { get; set; }

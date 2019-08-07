@@ -70,7 +70,8 @@
                     @Html.DisplayFor(modelItem => item.MedalSize)
                 </td>
                 <td>
-                    @Html.ActionLink(item.MedalFamily, "/create/"+item.MedalFamily)
+                    @Html.DisplayFor(modelItem => item.MedalFamily)
+                    @*@Html.ActionResult(item.MedalFamily, "/search?" + item.MedalFamily)*@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.MedalID }) |

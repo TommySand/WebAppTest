@@ -7,12 +7,14 @@
 }
 
 <h1>Catalogue</h1>
+@{
+    var search = "";
+}
 
-
-
-@foreach(var imgPath in Directory.GetFiles(Server.MapPath("~/Content/Images"), "*.jpg"))
+@foreach(var imgPath in Directory.GetFiles(Server.MapPath("~/Content/Images"), "*"+search+"*.jpg"))
 {
      var img = new FileInfo(imgPath);
      <img id="medalimage" src="@Url.Content(String.Format("~/Content/Images/{0}", img.Name))" class="image"/>
+     <p>@img.Name</p>
 }
 
